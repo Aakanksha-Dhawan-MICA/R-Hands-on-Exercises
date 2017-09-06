@@ -18,17 +18,3 @@ View(input_csv.df)
 
 
 
-###### Number of ODI matches won by INDIA ####
-
-
-cricket_link = "https://en.wikipedia.org/wiki/India%E2%80%93Pakistan_cricket_rivalry"
-cricket_file=read_html(cricket_link)
-cricket_table=html_nodes(cricket_file,"table")
-cricket_table_final<-html_table(cricket_table[2],fill=TRUE)
-View(cricket_table_final)
-class(cricket_table_final)
-cricket_table.df <- as.data.frame(cricket_table_final)
-View(cricket_table.df)
-NumberODI = cricket_table.df$ODI[2]
-
-NumberODI
