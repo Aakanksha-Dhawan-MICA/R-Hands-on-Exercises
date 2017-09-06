@@ -1,16 +1,49 @@
-getwd()
-setwd("D:\\MICA\\AMMA\\data_2017") 
-std_per <-read.csv(file="students.csv",head=T)
-View(std_per)
+Name <- c('angad', 'ayush', 'rajesh', 'sonu', 'pakka')
+Age <- c(22,23,24,25,26)
+MathMark <- c(24,35,34,34,34)
+ScienceMark <- c(65,67,56,78,23)
+TotalMark <- c(152,153,161,143,182)
+DataFrame1 <- data.frame(Name,Age,MathMark, ScienceMark, TotalMark)
+DataFrame1
+View(DataFrame1)
+DataFrame1$TotalMark <-DataFrame1$MathMark+DataFrame1$ScienceMark
+View(DataFrame1)
 
-#Since the original dataset is unavailable I have used a similar replacement dataset
-#Finding the average age of the class using a for loop
-sumAge <- 0
-i <- 0
-  for(i in 1:nrow(std_per))
-    {
-      sumAge <- sumAge + std_per$Age[i]
-  }
-averageAge <- sumAge/nrow(std_per)
-print("The average Age of class is: ")
-print(averageAge)
+DataFrame1$pct_math <- round(100*DataFrame1$MathMark/DataFrame1$TotalMark)
+View(DataFrame1)
+DataFrame1 <- DataFrame1[,c(2,6)]     
+View(DataFrame1)
+DataFrame1 <- DataFrame1[,c(2:6)]
+DataFrame1 <- DataFrame1(,c())
+names_DataFrame1 <- names(DataFrame1)
+names(DataFrame1) <- c('a','b')
+View(DataFrame1)
+names(DataFrame1) <- names_DataFrame1
+View(DataFrame1)
+vector1 <- seq(1,10, by=2)
+vecttor1[3] <-100
+
+v_col <- names(DataFrame1)
+v_col[3] <- "NewMaths"
+View(DataFrame1)
+
+DataFrame1$Age=exp(DataFrame1$Age)
+
+View(DataFrame1)
+class(DataFrame1$Name)
+DataFrame1$Name <- as.character(DataFrame1$Name)
+class(DataFrame1$Name)
+
+
+s1 <-DataFrame1$Age>=23
+
+DataFrame1 <- DataFrame1[s1,]
+View(DataFrame1)
+
+?sample
+
+sample_DataFrame1 <- sample(1:nrow(DataFrame1),3,replace=F)
+sample_DataFrame1
+sample_DataFrame1
+
+
